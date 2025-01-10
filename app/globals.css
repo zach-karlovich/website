@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --nord0: #2E3440;
+  --nord1: #3B4252;
+  --nord2: #434C5E;
+  --nord3: #4C566A;
+  --nord4: #D8DEE9;
+  --nord5: #E5E9F0;
+  --nord6: #ECEFF4;
+  --nord7: #8FBCBB;
+  --nord8: #88C0D0;
+  --nord9: #81A1C1;
+  --nord10: #5E81AC;
+  --nord11: #BF616A;
+  --nord12: #D08770;
+  --nord13: #EBCB8B;
+  --nord14: #A3BE8C;
+  --nord15: #B48EAD;
+}
+
+body {
+  color: var(--nord6);
+  background: var(--nord0);
+}
+
+@layer components {
+  .content-card {
+    @apply bg-nord2-80 backdrop-blur-sm p-6 rounded-lg shadow-lg 
+    border-2 border-nord3 hover:border-nord8 transition-colors duration-300;
+  }
+
+  .btn {
+    @apply font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out 
+    transform hover:scale-105 flex items-center justify-center 
+    border-2 shadow-lg;
+  }
+
+  .btn-primary {
+    @apply bg-nord8 hover:bg-nord9 text-nord0 border-nord9;
+  }
+
+  .btn-secondary {
+    @apply bg-nord10 hover:bg-nord11 text-nord0 border-nord11;
+  }
+
+  .btn-tertiary {
+    @apply bg-nord14 hover:bg-nord15 text-nord0 border-nord15;
+  }
+}
+
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+}
+
