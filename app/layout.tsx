@@ -5,7 +5,7 @@ import DynamicBackground from './components/DynamicBackground'
 import Header from './components/Header'
 
 export const metadata: Metadata = {
-  title: 'Zach Karlovich',
+  title: 'John Z. Karlovich',
   description: 'Personal website and portfolio',
 }
 

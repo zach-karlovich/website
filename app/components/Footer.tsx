@@ -11,7 +11,7 @@ export default function Footer() {
 
   return (
     <footer className="w-full py-4 mt-auto text-center text-nord4">
-      <p>© {year} Zach Karlovich. All rights reserved.</p>
+      <p>© {year} John Z. Karlovich. All rights reserved.</p>
     </footer>
   )
 }
