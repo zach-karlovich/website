@@ -43,6 +43,7 @@ cp .env.example .env.local
 5. Run the development server
 ```bash
 npm run dev
+```
 
 ## Environment Variables
 Create a .env.local file in the project root with the following content (or use cp .env.example .env.local as described above, then add your token):
