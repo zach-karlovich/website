@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { FaGithub, FaLinkedinIn, FaStrava } from 'react-icons/fa'
+import { FaGithub, FaStrava } from 'react-icons/fa'
 
 export default function Header() {
   return (
@@ -58,14 +58,6 @@ export default function Header() {
               className="text-nord4 hover:text-nord8 transition-all duration-200 transform hover:scale-110"
             >
               <FaGithub size={24} />
-            </a>
-            <a 
-              href="https://linkedin.com/in/zach-karlovich" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="text-nord4 hover:text-nord8 transition-all duration-200 transform hover:scale-110"
-            >
-              <FaLinkedinIn size={24} />
             </a>
             <a 
               href="https://www.strava.com/athletes/51932129" 
