@@ -16,7 +16,7 @@ type Props = {
 
 async function getProjectData(projectName: string) {
   const repos = await getRepositories('zach-karlovich')
-  return repos.find(r => r.name === projectName)
+  return repos.find((r: { name: string }) => r.name === projectName)
 }
 
 export default async function ProjectPage({ params, searchParams }: Props) {
