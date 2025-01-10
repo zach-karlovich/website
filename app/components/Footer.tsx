@@ -1,13 +1,19 @@
-const Footer = () => {
-    return (
-      <footer className="bg-nord1 text-nord6 p-4">
-        <div className="container mx-auto text-center">
-          <p>&copy; {new Date().getFullYear()} John Z. Karlovich. All rights reserved.</p>
-        </div>
-      </footer>
-    )
-  }
-  
-  export default Footer
+'use client'
+
+import { useEffect, useState } from 'react'
+
+export default function Footer() {
+  const [year, setYear] = useState('')
+
+  useEffect(() => {
+    setYear(new Date().getFullYear().toString())
+  }, [])
+
+  return (
+    <footer className="w-full py-4 mt-auto text-center text-nord4">
+      <p>© {year} Zach Karlovich. All rights reserved.</p>
+    </footer>
+  )
+}
   
   

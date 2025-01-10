@@ -1,7 +1,14 @@
 import Link from 'next/link'
 import { FaCode, FaBlog, FaUser } from 'react-icons/fa'
+import { getRepositories } from './lib/github'
 
-export default function Home() {
+export const revalidate = 3600 // Revalidate every hour
+
+export default async function Home() {
+  // Fetch repositories
+  const repos = await getRepositories('zach-karlovich')
+  const latestRepo = repos?.[0] // Get the first repo (most recent)
+
   return (
     <div className="flex flex-col items-center justify-center min-h-[calc(100vh-200px)]">
       <h1 className="text-5xl font-bold text-nord6 mb-4 text-center">
@@ -23,16 +30,21 @@ export default function Home() {
       </div>
 
       {/* Latest Project Section */}
-      <div className="mt-12 p-6 bg-nord2 rounded-lg shadow-lg max-w-md w-full backdrop-blur-sm bg-opacity-80 mb-6">
-        <h2 className="text-2xl font-bold text-nord6 mb-4">Latest Project</h2>
-        <h3 className="text-lg font-semibold text-nord8 mb-2">Computer Vision for Velocity Measurements</h3>
-        <p className="text-nord4 mb-4">
-          Python-based computer vision solutions for high-speed video analysis and automated velocity measurements.
-        </p>
-        <Link href="/projects#velocity-measurements" className="text-nord8 hover:text-nord9 font-semibold">
-          View Project →
-        </Link>
-      </div>
+      {latestRepo && (
+        <div className="mt-12 p-6 bg-nord2 rounded-lg shadow-lg max-w-md w-full backdrop-blur-sm bg-opacity-80 mb-6">
+          <h2 className="text-2xl font-bold text-nord6 mb-4">Latest Project</h2>
+          <h3 className="text-lg font-semibold text-nord8 mb-2">{latestRepo.name}</h3>
+          <p className="text-nord4 mb-4">
+            {latestRepo.description || latestRepo.summary}
+          </p>
+          <Link 
+            href={`/projects/${latestRepo.name}`} 
+            className="text-nord8 hover:text-nord9 font-semibold"
+          >
+            View Project →
+          </Link>
+        </div>
+      )}
 
       {/* Latest Blog Post Section */}
       <div className="mt-6 p-6 bg-nord2 rounded-lg shadow-lg max-w-md w-full backdrop-blur-sm bg-opacity-80">
