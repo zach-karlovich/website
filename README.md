@@ -1,5 +1,3 @@
-TEST NUMBER 2 
-
 This website was built using a mix of AI tools and some manual work to personalize it.  I have absolutely no experience with Next.js or Tailwind CSS.  This was a fun learning experience and it's a great starting point.  Pretty remarkable what you can do with AI these days.
 
 # Personal Website
