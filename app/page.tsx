@@ -15,7 +15,7 @@ export default async function Home() {
         Welcome to My <span className="text-nord8">Digital World</span>
       </h1>
       <p className="text-xl text-nord4 mb-8 text-center max-w-2xl">
-        I'm a passionate developer, creator, and lifelong learner. Explore my projects, read my thoughts, and get to know me better.
+        I'm a avid tinkerer and lifelong learner. This is a spot to explore my projects, read my thoughts, and get to know me better.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
         <Link href="/projects" className="bg-nord8 hover:bg-nord9 text-nord0 font-bold py-4 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 flex items-center justify-center">
