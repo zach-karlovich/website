@@ -14,9 +14,23 @@ type Props = {
   searchParams: { [key: string]: string | string[] | undefined }
 }
 
-async function getProjectData(projectName: string) {
+interface Repository {
+  id: number
+  name: string
+  description: string | null
+  html_url: string
+  readme: string
+  summary: string
+  topics: string[] | undefined
+  language: string | null | undefined
+  updated_at: string | null | undefined
+}
+
+async function getProjectData(projectName: string): Promise<Repository | undefined> {
   const repos = await getRepositories('zach-karlovich')
-  return repos.find((r: { name: string }) => r.name === projectName)
+  return repos.find((repo): repo is Repository =>
+    repo !== null && repo.name === projectName
+  ) || undefined
 }
 
 export default async function ProjectPage({ params, searchParams }: Props) {
@@ -37,13 +51,13 @@ export default async function ProjectPage({ params, searchParams }: Props) {
   return (
     <div className="max-w-4xl mx-auto">
       <div className="flex justify-between items-center mb-6">
-        <Link 
-          href="/projects" 
+        <Link
+          href="/projects"
           className="text-nord8 hover:text-nord9 flex items-center gap-2"
         >
           <FaArrowLeft /> Back to Projects
         </Link>
-        <a 
+        <a
           href={repo.html_url}
           target="_blank"
           rel="noopener noreferrer"
@@ -55,12 +69,12 @@ export default async function ProjectPage({ params, searchParams }: Props) {
 
       <div className="content-card">
         <h1 className="text-4xl font-bold text-nord6 mb-6">{repo.name}</h1>
-        
+
         {repo.description && (
           <p className="text-nord4 text-lg mb-6">{repo.description}</p>
         )}
 
-        <ReactMarkdown 
+        <ReactMarkdown
           className="prose prose-invert max-w-none
             prose-headings:text-nord6 
             prose-p:text-nord4 
