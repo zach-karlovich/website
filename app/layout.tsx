@@ -20,7 +20,7 @@ export default function RootLayout({
         <DynamicBackground />
         <div className="flex flex-col min-h-screen relative z-10">
           <Header />
-          <main className="flex-grow container mx-auto px-4 py-8">
+          <main className="flex-grow container mx-auto px-4 py-8 mt-16">
             {children}
           </main>
           <Footer />
