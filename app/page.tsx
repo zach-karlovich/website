@@ -12,7 +12,7 @@ export default async function Home() {
   return (
     <div className="flex flex-col items-center justify-center min-h-[calc(100vh-200px)]">
       <h1 className="text-5xl font-bold text-nord6 mb-4 text-center">
-        Welcome to My <span className="text-nord8">Digital World</span>
+        Catch you on the <span className="text-nord8">FLIP SIDE</span>
       </h1>
       <p className="text-xl text-nord4 mb-8 text-center max-w-2xl">
         I'm a avid tinkerer and lifelong learner. This is a spot to explore my projects, read my thoughts, and get to know me better.
@@ -37,8 +37,8 @@ export default async function Home() {
           <p className="text-nord4 mb-4">
             {latestRepo.description || latestRepo.summary}
           </p>
-          <Link 
-            href={`/projects/${latestRepo.name}`} 
+          <Link
+            href={`/projects/${latestRepo.name}`}
             className="text-nord8 hover:text-nord9 font-semibold"
           >
             View Project →
